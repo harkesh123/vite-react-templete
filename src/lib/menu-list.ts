@@ -1,5 +1,5 @@
 import {
-  // Tag,
+  Tag,
   // Users,
   // Settings,
   // Bookmark,
@@ -36,6 +36,17 @@ export function getMenuList(pathname: string): Group[] {
           label: "Home",
           active: pathname.includes("/home"),
           icon: LayoutGrid,
+          submenus: []
+        }
+      ]
+    }, {
+      groupLabel: "",
+      menus: [
+        {
+          href: "/table",
+          label: "Table",
+          active: pathname.includes("/table"),
+          icon: Tag,
           submenus: []
         }
       ]
