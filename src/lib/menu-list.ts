@@ -3,7 +3,7 @@ import {
   // Users,
   // Settings,
   // Bookmark,
-  // SquarePen,
+  SquarePen,
   LayoutGrid
 } from "lucide-react";
 
@@ -47,6 +47,18 @@ export function getMenuList(pathname: string): Group[] {
           label: "Table",
           active: pathname.includes("/table"),
           icon: Tag,
+          submenus: []
+        }
+      ]
+    },
+    {
+      groupLabel: "",
+      menus: [
+        {
+          href: "/form",
+          label: "Form",
+          active: pathname.includes("/form"),
+          icon: SquarePen,
           submenus: []
         }
       ]
