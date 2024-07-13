@@ -1,4 +1,4 @@
-"use client";
+
 import { Form } from "@/components/ui/form";
 import React from "react";
 import { DefaultValues, FormState, useForm } from "react-hook-form";
@@ -41,6 +41,7 @@ function AutoForm<SchemaType extends ZodObjectOrWrapped>({
   fieldConfig,
   children,
   className,
+  formClassName,
   dependencies,
 }: {
   formSchema: SchemaType;
@@ -53,6 +54,7 @@ function AutoForm<SchemaType extends ZodObjectOrWrapped>({
     | React.ReactNode
     | ((formState: FormState<z.infer<SchemaType>>) => React.ReactNode);
   className?: string;
+  formClassName?:string;
   dependencies?: Dependency<z.infer<SchemaType>>[];
 }) {
   const objectFormSchema = getObjectFormSchema(formSchema);
@@ -101,6 +103,7 @@ function AutoForm<SchemaType extends ZodObjectOrWrapped>({
           <AutoFormObject
             schema={objectFormSchema}
             form={form}
+            formClassName={formClassName}
             dependencies={dependencies}
             fieldConfig={fieldConfig}
           />

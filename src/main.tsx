@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import Table from "./table.tsx"
 import Form from "./form.tsx"
+import Form1 from "./form1.tsx"
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
     index:true,
     path: "/home",
     element: <App />,
+  },
+  {
+    index:true,
+    path: "/form1",
+    element: <Form1 />,
   },
   {
     index:true,

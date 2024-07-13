@@ -9,11 +9,12 @@ export default function AutoFormTextarea({
   isRequired,
   fieldConfigItem,
   fieldProps,
+  className,
 }: AutoFormInputComponentProps) {
   const { showLabel: _showLabel, ...fieldPropsWithoutShowLabel } = fieldProps;
   const showLabel = _showLabel === undefined ? true : _showLabel;
   return (
-    <FormItem>
+    <FormItem className={className}>
       {showLabel && (
         <AutoFormLabel
           label={fieldConfigItem?.label || label}

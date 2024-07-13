@@ -3,19 +3,21 @@ import { Input } from "@/components/ui/input";
 import AutoFormLabel from "../common/label";
 import AutoFormTooltip from "../common/tooltip";
 import { AutoFormInputComponentProps } from "../types";
+import { cn } from "@/lib/utils";
 
 export default function AutoFormInput({
   label,
   isRequired,
   fieldConfigItem,
   fieldProps,
+  className,
 }: AutoFormInputComponentProps) {
   const { showLabel: _showLabel, ...fieldPropsWithoutShowLabel } = fieldProps;
   const showLabel = _showLabel === undefined ? true : _showLabel;
   const type = fieldProps.type || "text";
 
   return (
-    <div className="flex flex-row  items-center space-x-2">
+    <div className={cn("flex flex-row  items-center space-x-2",className)}>
       <FormItem className="flex w-full flex-col justify-start">
         {showLabel && (
           <AutoFormLabel
